@@ -1,0 +1,155 @@
+  <main class="container"> 
+    <aside>
+      <section class="section-intro">
+        <div class="data-intro">
+          <div class="intro-video">
+            <video width="420" autoplay muted controls>
+              <source src="video/data-intro.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="intro-title">
+            <h3 class="intro-heading">Yangi Darslar</h3>
+              <p class="intro-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis nisi cumque modi ea vero numquam deleniti eius, tempora quae nostrum. Modi consectetur asperiores error obcaecati quam deleniti voluptate debitis atque nemo quae, exercitationem in nesciunt facere sit dolorum quisquam odio.</p>
+              <a href="#" class="intro-link">Ko'proq malumot olish</a>
+          </div>
+        </div>
+      </section>
+      <section class="section-project">
+        <div class="project-text-box">
+          <p>Ushbu qidiruv bo'limi orqali siz O'zingiz izlayotgan loyihani topishingiz mumkin</p>
+        </div>
+        {{!-- <label for="search">
+          <input 
+          class="search"
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Dasturlash"
+          >
+          <input type="submit" value="Izlash" class="submit">
+        </label> --}}
+        <div class="project-category">
+          <div class="project-row">
+
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-js-square"></i>
+                  <p href="#"> Javascript</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-node"></i>
+                  <p > Node Js</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-php"></i>
+                  <p href="#"> PHP</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="las la-video"></i>
+                  <p href="#">Video mantaj</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="las la-ad"></i>
+                  <p href="#"> Mation </p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="las la-file-csv"></i>
+                  <p href="#"> Office dasturlash</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-android"></i>
+                  <p href="#"> Android Dasturlash</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="las la-robot"></i>
+                  <p href="#"> Rabototexnika</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-text-box-last">
+          <p>Oxirgi joylangan loyihalar</p>
+        </div>
+      </section>
+      <section class="projects-section">
+          <div class="projects-row">
+            {{#if projects}}
+              {{#each projects}}
+                          <div class="projects-card">
+              <div class="projects-card-img">
+                <img src="{{image}}" alt="">
+                <a href="/users/project/{{_id}}" >
+                  <i class="las la-arrow-circle-right"></i>
+                </a>
+              </div>
+              <div class="projects-card-header">
+                <div class="pro-header-link">
+                  <a href="">{{project_name}}</a>
+                </div>
+                <div class="pro-header-author">
+                  <div class="pro-author-img">
+                    <img src="https://picsum.photos/400" alt="">
+                  </div>
+                  <p class="author-name">{{author.first_name}}</p>
+                </div>
+              </div>
+              <div class="projects-title">
+                <h5>{{project_name}}</h5>
+                <p>{{description}}</p>
+              </div>
+              <div class="projects-footer">
+                <div class="likes-comments">
+                  <div class="likes">
+                    <i  class="la la-heart heart-btn-home"></i>
+                    <p class="like-count">{{likes.length}}</p>
+                  </div>
+                  <div class="comments">
+                    <i class="las la-comments"></i>
+                    <p class="comments-count">7877</p>
+                  </div>
+                </div>
+                <a href="/users/project/{{_id}}" class="show-project">SHow project</a>
+              </div>
+            </div>
+              {{/each}}
+            {{else}}
+            <h1>Userlar mavjud emas</h1>
+            {{/if}}
+
+          </div>
+      </section>
+      <section class="all-projects">
+        <a href="/users/project/projects">Barcha loyihalar...</a>
+      </section>
+    </aside>
+  </main>

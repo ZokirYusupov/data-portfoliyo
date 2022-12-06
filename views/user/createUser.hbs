@@ -1,0 +1,43 @@
+  <main class="container"> 
+    <aside>
+      <section class="user-form">
+        <h3>O'quvchi yaratish <br>
+        {{#if error}}
+          <h2 style="color:red ; padding: 5px;">{{error}}</h2>
+         {{/if}}
+        </h3>
+        <form action="/users/add" method="post" enctype="multipart/form-data">
+          <label for="name">Ismi</label>
+          <input required type="text" id="name" name="firstName" placeholder="Zokir">
+          <label for="surname">Familiyasi</label>
+          <input required type="text" name="surName" id="surname" placeholder="Yusupov">
+          <label for="email">Email</label>
+          <input required type="email" id="email" name="email" placeholder="zyusupov51@gmail.com">
+          <label >Rasm tanlang</label>
+          <label  for="image" class="image">
+          <input required type="file" id="image" name="userImage">
+          <br>
+          <i class="las la-camera"></i>
+          <span id="imageName"></span>
+        </label>
+          <label  for="password">Parolni kiriting</label>
+          <div class="password-container">
+            <input required type="password" placeholder="Password..." id="password" name="password">
+            <i class="lar la-eye" id="eye"></i>
+          </div>
+          <label for="groupNumber">Guruh raqami</label>
+          <input required type="text" id="groupNumber" name="groupNumber" placeholder="144">
+          <label for="category">Kategoriya</label>
+          <select  name="category" id="category">
+            <option selected disabled>Tanlang</option>
+            <option value="" readonly>Kompyuter savodhonligi</option>
+            <option value="Kompyuter savodhonligi">Kompyuter savodhonligi</option>
+            <option value="Kompyuter savodhonligi">Kompyuter savodhonligi</option>
+            <option value="Kompyuter savodhonligi">Kompyuter savodhonligi</option>
+            <option value="Kompyuter savodhonligi">Kompyuter savodhonligi</option>
+          </select>
+          <input type="submit" value="Qo'shish">
+        </form>
+      </section>
+    </aside>
+  </main>

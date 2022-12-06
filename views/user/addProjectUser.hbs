@@ -1,0 +1,43 @@
+  <main class="container"> 
+    <aside>
+      <section class="user-form">
+        <h3>Loyiha  qo'shish</h3>
+        <form action="/users/project/add/{{findUser._id}}" method="POST" enctype="multipart/form-data">
+
+          {{!-- <label for="email">Email</label> --}}
+          <input type="email" value="{{findUser.email}}" readonly>
+          <label for="projectName">Loyiha nomi</label>
+          <input type="text" id="projectName" name="projectName" placeholder="Node js">
+          <label for="desc">Loyiha haqida</label>
+          <textarea style="font-size:20px; padding: 15px; height: 200px;" name="desc" id="desc" cols="30" rows="10" style="resize:none ;"></textarea>
+          <label >Loyiha ko'rinishi</label>
+          <label for="image" class="image">
+          <input type="file" id="image" name="projectImage">
+          <br>
+          <i class="las la-camera"></i>
+          <span id="imageName"></span>
+        </label>
+        
+          {{!-- <label for="video" class="image">
+          <input type="file" id="video" name="video">
+          <br>
+          <i class="las la-video"></i>
+          <span id="imageName"></span>
+        </label> --}}
+          {{!-- <label for="pdf" class="image">
+          <input type="file" id="pdf" name="pdf">
+          <br>
+          <i class="las la-file-pdf"></i>
+          <span id="imageName"></span>
+        </label> --}}
+        <label for="linkGit">Github Link</label>
+        <input type="text" id="linkGit" name="linkGit" placeholder="zyusupov312.github">
+
+        <label for="demoLink">Demo Link</label>
+        <input type="text" id="demoLink" name="demoLink" placeholder="zyusupov.netlify">
+          <input type="submit" value="Qo'shish">
+        </form>
+      </section>
+    </aside>
+  </main>
+  

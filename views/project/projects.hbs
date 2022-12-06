@@ -1,0 +1,121 @@
+  <main class="container"> 
+    <aside>
+
+      <section class="section-project">
+        <form action="/users/project/projects" method="GET">
+          <label for="search">
+            <input
+            class="search"
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Dasturlash"
+            value="{{querySearch}}"
+            >
+            <input type="submit" value="Izlash" class="submit">
+          </label>
+        </form>
+        <div class="project-category">
+          <div class="project-row">
+
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-js-square"></i>
+                  <p href="#"> Javascript</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-node"></i>
+                  <p > Node Js</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="lab la-php"></i>
+                  <p href="#"> PHP</p>
+                </div>
+              </a>
+            </div>
+            <div class="project-col">
+              <a href="#" class="project-links" style="display:inline-block; width: 100%;">
+                <div class="project">
+                  <i class="las la-video"></i>
+                  <p href="#">Video mantaj</p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="project-text-box-last">
+          <hr>
+        </div>
+      </section>
+      <section class="projects-section">
+          <div class="projects-row">
+            {{#if projects}}
+              {{#each projects}}
+                          <div class="projects-card">
+              <div class="projects-card-img">
+                <img src="{{url}}/{{image}}" alt="">
+                <a href="/users/project/{{_id}}" >
+                  <i class="las la-arrow-circle-right"></i>
+                </a>
+              </div>
+              <div class="projects-card-header">
+                <div class="pro-header-link">
+                  <a href="">{{project_name}}</a>
+                </div>
+                <div class="pro-header-author">
+                  <div class="pro-author-img">
+                    <img src="https://picsum.photos/400" alt="">
+                  </div>
+                  <p class="author-name">{{author.first_name}}</p>
+                </div>
+              </div>
+              <div class="projects-title">
+                <h5>{{project_name}}</h5>
+                <p>{{description}}</p>
+              </div>
+              <div class="projects-footer">
+                <div class="likes-comments">
+                  <div class="likes">
+                    <i class="las la-heart"></i>
+                    <p class="like-count">7877</p>
+                  </div>
+                  <div class="comments">
+                    <i class="las la-comments"></i>
+                    <p class="comments-count">7877</p>
+                  </div>
+                </div>
+                <a href="/users/project/{{_id}}" class="show-project">SHow project</a>
+              </div>
+            </div>
+              {{/each}}
+            {{else}}
+            <h1>Userlar mavjud emas</h1>
+            {{/if}}
+
+          </div>
+      </section>
+      <section class="all-projects">
+
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a class="" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </section>
+    </aside>
+  </main>

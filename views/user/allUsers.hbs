@@ -1,0 +1,79 @@
+  <main class="container"> 
+    <aside>
+      <!-- <section class="section-project" style="margin-top:-30px;
+      margin-left: 400px; position:fixed ;">
+        <label for="search">
+          <input 
+          class="search"
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Zokir"
+          >
+          <input type="submit" value="Izlash" class="submit">
+        </label>
+        </section> -->
+      <section class="all-users">
+        <div class="all-users-count">
+          <h3>Barcha Foydalanuvchilar</h3>
+          <p>Jami: <span>566</span></p>
+        </div>
+        <table border="1">
+          <thead cellspacing="0" style="position: sticky; top:90px;
+          background-color: black;">
+            <tr>
+              <th rowspan="2">First Name</th>
+              <th rowspan="2">Last Name</th>
+              <th >
+                <input type="text" name="search" id="search">
+                <input type="submit" value="Izlash">
+              </th>
+              <th rowspan="2">Group Number</th>
+              <th rowspan="2">Kategoriya</th>
+              <th colspan="3">Action</th>
+            </tr>
+            <tr>
+              <th>
+                Email
+              </th>
+              <th>O'zgartirish</th>
+              <th>O'chirish</th>
+              <th>Loyiha qo'shish</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#if users}}
+              {{#each users}}
+                  <tr>
+                    <td>{{first_name}}</td>
+                    <td>{{last_name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{group_number}}</td>
+                    <td>{{category}}</td>
+                    <td><a href="" class="lar la-edit"></a></td>
+                    <td><a href="" class="las la-trash la-trash-btn"></a></td>
+                    <td><a href="/users/project/add/{{_id}}" class="las la-plus-circle"></a></td>
+                  </tr>
+              {{/each}}
+            {{else}}
+            <h1>Foydalanuvchilar mavjud emas</h1>
+            {{/if}}
+
+          </tbody>
+        </table>
+      </section>
+      <section class="all-projects">
+
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a class="" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </section>
+    </aside>
+  </main>

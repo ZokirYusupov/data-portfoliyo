@@ -1,0 +1,33 @@
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/">DATA</a>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <a href="/users/add" class="nav-list-item-link">Add User</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="#" class="nav-list-item-link">Projects</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="/users" class="nav-list-item-link">Users</a>
+        </li>
+   {{#if activ}}
+         <li class="nav-list-item active-item">
+          <a href="/" class="nav-list-item-link">{{user.first_name}}</a>
+        </li>
+       <li class="nav-list-item active-item">
+          <a href="/auth/logout" class="nav-list-item-link">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-list-item active-item">
+          <a href="/auth/login" class="nav-list-item-link">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+      <div class="dark-mode">
+        <input type="radio">
+      </div>
+    </nav>
+  </header>
