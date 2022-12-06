@@ -113,7 +113,7 @@ const getOneProjectPage = async (req, res) => {
   try {
 
     const pro = await Project.findById(req.params.id);
-    let checkLike = pro.likes.includes(req.session.user._id)
+    let checkLike = pro.likes.includes(req.session.user?._id)
 
     const findProject = await Project
     .findByIdAndUpdate(req.params.id, 
@@ -177,10 +177,13 @@ const projectLike = async (req, res) => {
 
       project.likes.splice(indexNum, 1)
       project.save()
-    } else {
-      project.likes.push(id)
-      project.save()
-    }
+    } else if(!req.session.user) {
+         return res.redirect('/users/project/' + req.params.id)
+        }
+        else {
+          project.likes.push(id)
+        project.save()
+        }
 
     return res.redirect('/users/project/' + req.params.id)
 
